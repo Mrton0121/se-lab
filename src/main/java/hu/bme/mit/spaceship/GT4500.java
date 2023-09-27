@@ -18,13 +18,6 @@ public class GT4500 implements SpaceShip {
   }
 
   public boolean fireLaser(FiringMode firingMode) {
-<<<<<<< HEAD
-    // TODO not implemented yet and the line is modified to create merge conflict
-=======
-<<<<<<< HEAD
-=======
->>>>>>> dd586f3 (modified the same line as 'branch-A' to create merge conflict)
->>>>>>> 5e4b182 (modified the same line as 'branch-A' to create merge conflict)
     return false;
   }
 
