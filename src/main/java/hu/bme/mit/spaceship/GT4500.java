@@ -16,7 +16,10 @@ public class GT4500 implements SpaceShip {
   }
 
   public boolean fireLaser(FiringMode firingMode) {
+<<<<<<< HEAD
     // is not implemented yet
+=======
+>>>>>>> dd586f3 (modified the same line as 'branch-A' to create merge conflict)
     return false;
   }
 
