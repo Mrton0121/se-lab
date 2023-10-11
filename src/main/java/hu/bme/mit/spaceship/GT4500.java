@@ -35,54 +35,16 @@ public class GT4500 implements SpaceShip {
   * @return whether at least one torpedo was fired successfully
   */
   public boolean fireTorpedo(FiringMode firingMode) {
-
-    // if (firingMode == SINGLE) {
-    //   if (wasPrimaryFiredLast) {
-    //       // try to fire the secondary first
-    //       if (! secondaryTorpedoStore.isEmpty()) {
-    //         wasPrimaryFiredLast = false;
-    //         return secondaryTorpedoStore.fire(1);
-    //       }
-    //       else {
-    //         // although primary was fired last time, but the secondary is empty
-    //         // thus try to fire primary again
-    //         if (! primaryTorpedoStore.isEmpty()) {
-    //           wasPrimaryFiredLast = true;
-    //           return primaryTorpedoStore.fire(1);
-    //         }
-    //       }
-    //     }
-    //     else {
-    //       // try to fire the primary first
-    //       if (!primaryTorpedoStore.isEmpty()) {
-    //         wasPrimaryFiredLast = true;
-    //         return primaryTorpedoStore.fire(1);
-    //       }
-    //       else {
-    //         // although secondary was fired last time, but primary is empty
-    //         // thus try to fire secondary again
-    //         if (!secondaryTorpedoStore.isEmpty()) {
-    //           wasPrimaryFiredLast = false;
-    //           return secondaryTorpedoStore.fire(1);
-    //         }
-
-    //         // if both of the stores are empty, nothing can be done, return failure
-    //       }
-    //     }
-    // } else{
-    //   return primaryTorpedoStore.fire(1) && secondaryTorpedoStore.fire(1);
-    // }
-    
-    if(firingMode == SINGLE){
+    if(firingMode == firingMode.SINGLE){
       if(!secondaryTorpedoStore.isEmpty() && wasPrimaryFiredLast){
         wasPrimaryFiredLast = false;
         return secondaryTorpedoStore.fire(1);
-      }
+      } else{
       wasPrimaryFiredLast = true;
-      return primaryTorpedoStore.fire(1);      
+      return primaryTorpedoStore.fire(1);
+      }      
     } else{
       return primaryTorpedoStore.fire(1) && secondaryTorpedoStore.fire(1);
     }
-
   }
 }
