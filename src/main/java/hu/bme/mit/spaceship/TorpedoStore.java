@@ -14,11 +14,11 @@ public class TorpedoStore {
 
   private int torpedoCount = 0;
 
-  Random generator;
+  private Random generator;
 
   public TorpedoStore(int numberOfTorpedos){
-    generator = new Random();
     this.torpedoCount = numberOfTorpedos;
+    createGenerator();
 
     // update failure rate if it was specified in an environment variable
     String failureEnv = System.getenv("IVT_RATE");
@@ -29,6 +29,10 @@ public class TorpedoStore {
         FAILURE_RATE = 0.0;
       }
     }
+  }
+
+  private void createGenerator(){
+    this.generator = new Random();
   }
 
   public boolean fire(int numberOfTorpedos){
